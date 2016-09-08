@@ -22,7 +22,7 @@
         	http://www.springframework.org/schema/util/spring-util.xsd
         	http://www.springframework.org/schema/task
         	http://www.springframework.org/schema/task/spring-task.xsd">
-	<context:component-scan base-package="com.html" />
+	<context:component-scan base-package="com.**" />
 	
 	
     
