@@ -23,7 +23,8 @@
 		
 	</resultMap>
 	
-	<select id="getInfoByUUID" parameterType="string" resultMap="InfoMapper">
+	<!-- <select id="getInfoByUUID" parameterType="string" resultMap="InfoMapper"> -->
+	<select id="getInfoByUUID" parameterType="string" resultType="Info">
 		SELECT * FROM p_info WHERE uuid=#{uuid}
 	</select>
 	

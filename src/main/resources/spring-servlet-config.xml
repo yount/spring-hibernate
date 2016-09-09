@@ -89,7 +89,7 @@
         <property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
          -->
         
-        <property name="basePackage" value="com.zxc.dao" />
+        <property name="basePackage" value="com.*.dao" />
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>  
          
     </bean>
