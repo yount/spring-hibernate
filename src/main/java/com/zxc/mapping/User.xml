@@ -3,7 +3,7 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
 <mapper namespace="com.zxc.dao.UserDao">  
  
-	<resultMap id="User" type="User">   
+	<resultMap id="User" type="User">
 		<id property="uuid" column="uuid" javaType="string" jdbcType="VARCHAR" />
 		<result property="userID" column="userId" javaType="string"/>
 		
@@ -50,8 +50,12 @@
 	</resultMap> 
 
 
-	<select id="getUserByEmailAddress" parameterType="string" resultType="User">  
+	<select id="getUserByEmailAddress" parameterType="string" resultType="User">
 	    SELECT * FROM User_ WHERE emailAddress=#{emailaddress}
+	</select>
+	
+	<select id="getCount" resultType="java.lang.Integer">
+	    SELECT COUNT(*) FROM User_
 	</select>
 	<!-- 
 	<insert id="addUser" parameterType="com.springMyBatis.system.model.User" flushCache="true">  

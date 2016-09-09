@@ -6,4 +6,6 @@ public interface UserDao {
 
 	public User getUserByEmailAddress(String emailaddress);
 
+	public int getCount();
+
 }
