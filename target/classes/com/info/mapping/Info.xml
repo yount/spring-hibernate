@@ -8,11 +8,11 @@
 		<result property="createId" column="createId" javaType="string"/>
 		
 		<result property="createUserName" column="createUserName" javaType="string"/>
-		<result property="title" column="title" javaType="int"/>
+		<result property="title" column="title" javaType="string"/>
 		<result property="content" column="content" javaType="string"/>
 		<result property="imageURL" column="imageURL" javaType="string"/>
-		<result property="mainImageURL" column="mainImageURL" javaType="int"/>
-		<result property="mediaURL" column="mediaURL" javaType="int"/>
+		<result property="mainImageURL" column="mainImageURL" javaType="string"/>
+		<result property="mediaURL" column="mediaURL" javaType="string"/>
 		<result property="status" column="status" javaType="string"/>
 		<result property="location" column="location" javaType="string"/>
 		<result property="audience" column="audience" javaType="string"/>
@@ -23,9 +23,12 @@
 		
 	</resultMap>
 	
-	<!-- <select id="getInfoByUUID" parameterType="string" resultMap="InfoMapper"> -->
-	<select id="getInfoByUUID" parameterType="string" resultType="Info">
-		SELECT * FROM p_info WHERE uuid=#{uuid}
+	<select id="getInfoByUUID" parameterType="string" resultMap="InfoMapper">
+	<!-- <select id="getInfoByUUID" parameterType="string" resultType="Info"> -->
+		SELECT p.*, user.firstName createUserName 
+		FROM p_info p 
+		LEFT JOIN User_ user ON user.userId=p.createId  
+		WHERE uuid=#{uuid} 
 	</select>
 	
 </mapper>
