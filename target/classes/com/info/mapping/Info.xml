@@ -21,7 +21,8 @@
 		<result property="endDate" column="endDate" javaType="java.util.Date"/>
 		<result property="startTime" column="startTime" javaType="java.util.Date"/>
 		
-	</resultMap> 
+	</resultMap>
+	
 	<select id="getInfoByUUID" parameterType="string" resultMap="InfoMapper">
 		SELECT * FROM p_info WHERE uuid=#{uuid}
 	</select>
