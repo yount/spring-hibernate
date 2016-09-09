@@ -4,8 +4,10 @@
 <configuration>
 	<typeAliases>
 		<typeAlias type="com.zxc.model.User" alias="User"/>
+		<typeAlias type="com.info.model.Info" alias="Info"/>
 	</typeAliases>
     <mappers>
         <mapper resource="com/zxc/mapping/User.xml"/>
+        <mapper resource="com/info/mapping/Info.xml"/>
     </mappers>
 </configuration>

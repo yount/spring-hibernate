@@ -3,14 +3,14 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
 <mapper namespace="com.zxc.dao.UserDao">  
  
-	<resultMap id="User" type="User">
-		<id property="uuid" column="uuid" javaType="string" jdbcType="VARCHAR" />
+	<resultMap id="UserMapper" type="User">
+		<id property="uuid" column="uuid_" javaType="string" jdbcType="VARCHAR" />
 		<result property="userID" column="userId" javaType="string"/>
 		
 		<result property="companyID" column="companyId" javaType="string"/>
 		<result property="defaultUser" column="defaultUser" javaType="int"/>
 		<result property="contactID" column="contactId" javaType="string"/>
-		<result property="password" column="password" javaType="string"/>
+		<result property="password" column="password_" javaType="string"/>
 		<result property="passwordEncrypted" column="passwordEncrypted" javaType="int"/>
 		<result property="passwordReset" column="passwordReset" javaType="int"/>
 		<result property="digest" column="digest" javaType="string"/>
@@ -39,18 +39,24 @@
 		<result property="agreedToTermsOfUse" column="agreedToTermsOfUse" javaType="int"/>
 		<result property="emailAddressVerified" column="emailAddressVerified" javaType="int"/>
 		<result property="status" column="status" javaType="int"/>
-		<!-- 
+		
 		<result property="modifiedDate" column="modifiedDate" javaType="java.util.Date"/>
 		<result property="passwordModifiedDate" column="passwordModifiedDate" javaType="java.util.Date"/>
 		<result property="loginDate" column="loginDate" javaType="java.util.Date"/>
 		<result property="lastLoginDate" column="lastLoginDate" javaType="java.util.Date"/>
 		<result property="lastFailedLoginDate" column="lastFailedLoginDate" javaType="java.util.Date"/>
 		<result property="lockoutDate" column="lockoutDate" javaType="java.util.Date"/>
-		 -->
+		
 	</resultMap> 
 
 
-	<select id="getUserByEmailAddress" parameterType="string" resultType="User">
+	<!-- 
+		<select id="getUserByEmailAddress" parameterType="string" resultType="User">
+		resultType="User" 中的User在<typeAlias type="com.zxc.model.User" alias="User"/>
+		中定义
+		mybatis当数据库中的表有下划线的时候,用自己定义的映射关系
+	-->
+	<select id="getUserByEmailAddress" parameterType="string" resultMap="UserMapper">
 	    SELECT * FROM User_ WHERE emailAddress=#{emailaddress}
 	</select>
 	

@@ -21,10 +21,10 @@ public class User {
 	private int graceLoginCount;
 	private String screenName;
 	private String emailAddress;
-	private BigInteger facebookId;
-	private BigInteger ldapServerId;
+	private long facebookId;
+	private long ldapServerId;
 	private String openID;
-	private BigInteger portraitID;
+	private long portraitID;
 	private String languageID;
 	private String timeZoneID;
 	private String greeting;
@@ -146,16 +146,16 @@ public class User {
 	public void setEmailAddress(String emailAddress) {
 		this.emailAddress = emailAddress;
 	}
-	public BigInteger getFacebookId() {
+	public long getFacebookId() {
 		return facebookId;
 	}
-	public void setFacebookId(BigInteger facebookId) {
+	public void setFacebookId(long facebookId) {
 		this.facebookId = facebookId;
 	}
-	public BigInteger getLdapServerId() {
+	public long getLdapServerId() {
 		return ldapServerId;
 	}
-	public void setLdapServerId(BigInteger ldapServerId) {
+	public void setLdapServerId(long ldapServerId) {
 		this.ldapServerId = ldapServerId;
 	}
 	public String getOpenID() {
@@ -164,10 +164,10 @@ public class User {
 	public void setOpenID(String openID) {
 		this.openID = openID;
 	}
-	public BigInteger getPortraitID() {
+	public long getPortraitID() {
 		return portraitID;
 	}
-	public void setPortraitID(BigInteger portraitID) {
+	public void setPortraitID(long portraitID) {
 		this.portraitID = portraitID;
 	}
 	public String getLanguageID() {

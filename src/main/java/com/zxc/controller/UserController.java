@@ -10,6 +10,7 @@ import org.apache.commons.dbcp.BasicDataSource;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -31,41 +32,22 @@ public class UserController {
 	@RequestMapping("home")
 	public ModelAndView homePage(HttpServletRequest request, HttpServletResponse response){
 		logger.info(request.getHeader("Referer"));
-		User user = userService.getUserByEmailAddress("");
-		logger.info(user);
-		return new ModelAndView("user/home.html");
+		ModelMap map = new ModelMap();
+		User user = userService.getUserByEmailAddress("user@123.com");
+		map.put("user", user);
+		return new ModelAndView("user/home.jsp", map);
 	}
 	
 	@RequestMapping("count")
 	public ModelAndView count(HttpServletRequest request, HttpServletResponse response){
 		logger.info(request.getHeader("Referer"));
 		
-		Connection conn = null;
-		try {
-			
-			conn = dataSource.getConnection();
-			logger.info("conn ：" + conn);
-		} catch (SQLException e) {
-			e.printStackTrace();
-			logger.info("conn 错误");
-			logger.info("getDriverClassName : "+dataSource.getDriverClassName());
-			logger.info("getUrl : "+dataSource.getUrl());
-			logger.info("getUsername : "+dataSource.getUsername());
-			logger.info("getPassword : "+dataSource.getPassword());
-			logger.info(e.getMessage());
-		} finally {
-			if(conn !=null){
-				try {
-					conn.close();
-				} catch (SQLException e) {
-					logger.info(e.getMessage());
-				}
-			}
-		}
+		ModelMap map = new ModelMap();
 		
 		int count = userService.getCount();
-		logger.info("count : "+count);
+		map.put("user_count", count);
+		logger.info("user count : "+count);
 		
-		return new ModelAndView("user/home.html");
+		return new ModelAndView("user/count.jsp", map);
 	}
 }
