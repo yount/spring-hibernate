@@ -2,15 +2,56 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
 <mapper namespace="com.zxc.dao.UserDao">  
-<!-- 
-	<resultMap id="getByTestText" type="TestBean">   
-		<id property="id" column="test_id" javaType="string" jdbcType="VARCH AR" />    
-		<result property="testText" column="test_text" javaType="string" jdb cType="VARCHAR" />   
+ 
+	<resultMap id="User" type="User">   
+		<id property="uuid" column="uuid" javaType="string" jdbcType="VARCHAR" />
+		<result property="userID" column="userId" javaType="string"/>
+		
+		<result property="companyID" column="companyId" javaType="string"/>
+		<result property="defaultUser" column="defaultUser" javaType="int"/>
+		<result property="contactID" column="contactId" javaType="string"/>
+		<result property="password" column="password" javaType="string"/>
+		<result property="passwordEncrypted" column="passwordEncrypted" javaType="int"/>
+		<result property="passwordReset" column="passwordReset" javaType="int"/>
+		<result property="digest" column="digest" javaType="string"/>
+		<result property="reminderQueryQuestion" column="reminderQueryQuestion" javaType="string"/>
+		<result property="reminderQueryAnswer" column="reminderQueryAnswer" javaType="string"/>
+		<result property="graceLoginCount" column="graceLoginCount" javaType="int"/>
+		<result property="screenName" column="screenName" javaType="string"/>
+		<result property="emailAddress" column="emailAddress" javaType="string"/>
+		<result property="facebookId" column="facebookId" javaType="long"/>
+		<result property="ldapServerId" column="ldapServerId" javaType="long"/>
+		<result property="openID" column="openID" javaType="string"/>
+		<result property="portraitID" column="portraitID" javaType="long"/>
+		<result property="languageID" column="languageID" javaType="string"/>
+		<result property="timeZoneID" column="timeZoneID" javaType="string"/>
+		<result property="greeting" column="greeting" javaType="string"/>
+		<result property="comments" column="comments" javaType="string"/>
+		<result property="firstName" column="firstName" javaType="string"/>
+		<result property="middleName" column="middleName" javaType="string"/>
+		<result property="lastName" column="lastName" javaType="string"/>
+		<result property="jobTitle" column="jobTitle" javaType="string"/>
+		<result property="loginIP" column="loginIP" javaType="string"/>
+		<result property="lastLoginIP" column="lastLoginIP" javaType="string"/>
+		<result property="failedLoginAttempts" column="failedLoginAttempts" javaType="int"/>
+		<result property="lockout" column="lockout" javaType="int"/>
+		<result property="createDate" column="createDate" javaType="java.util.Date"/>
+		<result property="agreedToTermsOfUse" column="agreedToTermsOfUse" javaType="int"/>
+		<result property="emailAddressVerified" column="emailAddressVerified" javaType="int"/>
+		<result property="status" column="status" javaType="int"/>
+		<!-- 
+		<result property="modifiedDate" column="modifiedDate" javaType="java.util.Date"/>
+		<result property="passwordModifiedDate" column="passwordModifiedDate" javaType="java.util.Date"/>
+		<result property="loginDate" column="loginDate" javaType="java.util.Date"/>
+		<result property="lastLoginDate" column="lastLoginDate" javaType="java.util.Date"/>
+		<result property="lastFailedLoginDate" column="lastFailedLoginDate" javaType="java.util.Date"/>
+		<result property="lockoutDate" column="lockoutDate" javaType="java.util.Date"/>
+		 -->
 	</resultMap> 
- -->
 
-	<select id="getUserByEmailAddress" parameterType="com.zxc.model.User" resultType="com.zxc.model.User">  
-	    SELECT * FROM user WHERE emailaddress=#{emailaddress}
+
+	<select id="getUserByEmailAddress" parameterType="string" resultType="User">  
+	    SELECT * FROM User_ WHERE emailAddress=#{emailaddress}
 	</select>
 	<!-- 
 	<insert id="addUser" parameterType="com.springMyBatis.system.model.User" flushCache="true">  

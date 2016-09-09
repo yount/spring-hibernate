@@ -1,16 +1,14 @@
 package com.zxc.service.impl;
 
-import javax.annotation.Resource;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.zxc.dao.UserDao;
 import com.zxc.model.User;
-import com.zxc.service.IUserService;
+import com.zxc.service.UserService;
 
 @Service("userService")
-public class UserServiceImpl implements IUserService {
+public class UserServiceImpl implements UserService {
 
 	@Autowired
     private UserDao userDao; 
@@ -18,6 +16,7 @@ public class UserServiceImpl implements IUserService {
 	public User getUserById(int userId) {
 		return null;
 	}
+	
 	
 	public User getUserByEmailAddress(String emailaddress){
 		return userDao.getUserByEmailAddress(emailaddress);

@@ -2,7 +2,10 @@
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+	<typeAliases>
+		<typeAlias type="com.zxc.model.User" alias="User"/>
+	</typeAliases>
     <mappers>
-        <mapper resource="com/zxc/mapping/*.xml"/>
+        <mapper resource="com/zxc/mapping/User.xml"/>
     </mappers>
 </configuration>
