@@ -11,6 +11,7 @@
 <body>
 	<table>
 		<tr>
+<<<<<<< HEAD
 			<td><%=basePath %>page/<h3>html</h3></td>
 			<td><%=basePath %>page/<h3>user</h3></td>
 			<td><%=basePath %>page/<h3>info</h3></td>
@@ -23,6 +24,25 @@
 		<tr>
 			<td></td>
 			<td><a href="<%=basePath %>page/user/count?<%=new Date() %>"><%=basePath %>page/user/count</a></td>
+=======
+			<td><%=basePath %>/<h3>html</h3></td>
+			<td><%=basePath %>/<h3></h3></td>
+			<td><%=basePath %>/<h3></h3></td>
+		</tr>
+		<tr>
+			<td>ModelAndView : <a href="<%=basePath %>html/home?<%=new Date() %>"><%=basePath %>html/home.html</a></td>
+			<td><a href=""></a></td>
+			<td><a href=""></a></td>
+		</tr>
+		<tr>
+			<td>String : <a href="<%=basePath %>html/home_jsp?<%=new Date() %>"><%=basePath %>html/home.jsp</a></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>String : <a href="<%=basePath %>html/home_html?<%=new Date() %>"><%=basePath %>html/home.html</a></td>
+			<td></td>
+>>>>>>> 1a8a1267d81a9c874f29a68570dc17bad9948604
 			<td></td>
 		</tr>
 	</table>

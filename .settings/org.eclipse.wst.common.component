@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+<<<<<<< HEAD
     <wb-module deploy-name="as">
+=======
+    <wb-module deploy-name="asd">
+>>>>>>> 1a8a1267d81a9c874f29a68570dc17bad9948604
         <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+<<<<<<< HEAD
         <property name="context-root" value="as"/>
         <property name="java-output-path" value="/as/target/classes"/>
+=======
+        <property name="context-root" value="asd"/>
+        <property name="java-output-path" value="/asd/target/classes"/>
+>>>>>>> 1a8a1267d81a9c874f29a68570dc17bad9948604
     </wb-module>
 </project-modules>
