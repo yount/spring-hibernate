@@ -24,4 +24,8 @@ public class HTML {
 		logger.info(request.getHeader("Referer"));
 		return new ModelAndView("html/game.html");
 	}
+	@RequestMapping("string")
+	public String string(){
+		return "html/string.html";
+	}
 }
